@@ -1,6 +1,9 @@
 # Consumer Driven Contracts Testing with Swift Package Manager
 
 [![Build Status](https://travis-ci.org/surpher/PactSwiftPMExample.svg?branch=master)](https://travis-ci.org/surpher/PactSwiftPMExample)
+[![Swift Package Manager Compatible](https://img.shields.io/badge/swift_package_manager-compatible-brightgreen.svg)]()
+![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)
+[![Twitter](https://img.shields.io/badge/twitter-@pact__up-blue.svg?style=flat)](http://twitter.com/pact_up)
 
 This project is an example of how to use `pact-consumer-swift` framework.
 
