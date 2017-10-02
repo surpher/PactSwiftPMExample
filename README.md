@@ -23,21 +23,25 @@ _This pact mock service will stand in for your API provider and run on localhost
 import PackageDescription
 
 let package = Package(
-  name: "PactSwiftPMExample",
-  dependencies: [
-    .package(url: "https://github.com/surpher/PactConsumer", from: "0.0.5"),
-    .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.5.1")
-  ],
-  targets: [
-    .target(
-      name: "PactSwiftPMExample",
-      dependencies: ["Alamofire"]
-    ),
-    .testTarget(
-      name: "PactSwiftPMExampleTests",
-      dependencies: ["PactSwiftPMExample", "PactConsumer"]
-    )
-  ]
+    name: "PactSwiftPMExample",
+    dependencies: [
+      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.5.1"),
+      .package(url: "https://github.com/DiUS/pact-consumer-swift", from: "0.5.0")
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+        .target(
+          name: "PactConsumer",
+          dependencies: ["PactSwiftPMExample"],
+          path: "Sources/PactConsumer"),
+        .target(
+          name: "PactSwiftPMExample",
+          dependencies: ["Alamofire"]),
+        .testTarget(
+          name: "PactSwiftPMExampleTests",
+          dependencies: ["PactSwiftPMExample", "PactConsumerSwift"]),
+    ]
 )
 ```
 
@@ -46,7 +50,7 @@ let package = Package(
 2. Download the dependencies by running `swift package resolve` in your project root,
 3. Edit your `Sources` and add your `Tests`,
 4. Build the project by running `swift build`,
-5. Test the app works by running `.build/debug/PactSwiftPMExample` - it should print a response from [https://swapi.co/api/people/1/](),
+5. Test the app works by running `.build/debug/PactConsumer` - it should print a response from [https://swapi.co/api/people/1/](),
 6. Start up the pact mock service by running `pact-mock-service start --pact-specification-version 2.0.0 --log "./tmp/pact.log" --pact-dir "./tmp/pacts" -p 1234`  
 (or if you're lazy just `pact-mock-service start`),
 7. Run your tests by running `swift test`,
