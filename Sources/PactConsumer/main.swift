@@ -1,10 +1,10 @@
 import Foundation
-import Alamofire
+import PactSwiftPMExample
+
+var swapiClient = PactSwiftPMExample.SwapiClient(baseUrl: "https://swapi.co/api")
+var keepAlive = true
 
 print("Welcome to Pactland! fetching now...")
-
-var swapiClient = SwapiClient(baseUrl: "https://swapi.co/api")
-var keepAlive = true
 
 swapiClient.fetchStarWarsCharacter() { (response, statusCode) -> Void in
   print("Status Code:\t\(statusCode)\n\nPayload:\t\t\(response)")

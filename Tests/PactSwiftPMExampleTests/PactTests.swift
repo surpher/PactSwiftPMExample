@@ -1,28 +1,26 @@
-import Foundation
 import XCTest
-import PactConsumer
+import PactConsumerSwift
 
-import PactSwiftPMExample
+@testable import PactSwiftPMExample
 
 class PactSwiftPMExampleTests: XCTestCase {
 
-  var starWarsProvider: MockService?
+  var starWarsProvider: PactConsumerSwift.MockService?
   var starWarsClient: SwapiClient?
 
   override func setUp() {
     super.setUp()
 
-    starWarsProvider = PactConsumer.MockService(provider: "Star Wars API", consumer: "Our macOS app")
+    starWarsProvider = PactConsumerSwift.MockService(provider: "Star Wars API", consumer: "Our macOS app")
     starWarsClient = SwapiClient(baseUrl: starWarsProvider!.baseUrl)
   }
 
   override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
     super.tearDown()
   }
 
   func test_API_returnsCharacter() {
-    // Prepare the expecated behaviour
+    // Prepare the expected behaviour
     starWarsProvider!.uponReceiving("a request for a character").withRequest(method: .GET, path: "/people/3/")
         .willRespondWith(status: 200, headers: ["Content-Type": "application/json"], body: [
           "name": "Luke Skywalker",

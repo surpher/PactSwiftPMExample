@@ -1,3 +1,4 @@
+#if os(Linux)
 extension PactSwiftPMExampleTests {
   static var allTests: [(String, (PactSwiftPMExampleTests) -> () throws -> Void)] {
     return [
@@ -6,3 +7,4 @@ extension PactSwiftPMExampleTests {
     ]
   }
 }
+#endif

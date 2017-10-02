@@ -3,24 +3,23 @@
 import PackageDescription
 
 let package = Package(
-  name: "PactSwiftPMExample",
-  dependencies: [
-      // Dependencies declare other packages that this package depends on.
-      // .package(url: /* package url */, from: "1.0.0"),
-      .package(url: "https://github.com/surpher/PactConsumer", from: "0.0.5"),
-      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.5.1")
-  ],
-  targets: [
-      // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-      // Targets can depend on other targets in this package, and on products in packages which this package depends on.
-      .target(
-        name: "PactSwiftPMExample",
-        dependencies: ["Alamofire"]
-      ),
-      .testTarget(
-        name: "PactSwiftPMExampleTests",
-        // dependencies: ["PactSwiftPMExample", "PactConsumer"],
-        dependencies: ["PactSwiftPMExample", "PactConsumer"]
-      )
-  ]
+    name: "PactSwiftPMExample",
+    dependencies: [
+      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.5.1"),
+      .package(url: "https://github.com/DiUS/pact-consumer-swift", from: "0.5.0")
+    ],
+    targets: [
+        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+        .target(
+          name: "PactConsumer",
+          dependencies: ["PactSwiftPMExample"],
+          path: "Sources/PactConsumer"),
+        .target(
+            name: "PactSwiftPMExample",
+            dependencies: ["Alamofire"]),
+        .testTarget(
+            name: "PactSwiftPMExampleTests",
+            dependencies: ["PactSwiftPMExample", "PactConsumerSwift"]),
+    ]
 )
