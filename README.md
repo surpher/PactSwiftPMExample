@@ -63,5 +63,5 @@ _(where provider and consumer is what we set it up in the PactTests_ `starWarsPr
 ##### Notes
 Following best practices, you should write and run your unit tests before checking if the app works, do you agree?  
 
-To avoid running 4 commands to start the mock service, build, test and shut down the mock service, there's a `build_test.sh` script in this repo that takes care of creating the `./tmp` folder, starting up the _pact-mock-service_, building the project, running the test, and then shutting down the service.  
+To avoid running 4 commands to start the mock service, build, test and shut down the mock service, there's a `scripts/build_test.sh` script in this repo that takes care of creating the `./tmp` folder, starting up the _pact-mock-service_, building the project, running the test, and then shutting down the service.  
 You should probably set up your own test script/s based on your own requirements.
