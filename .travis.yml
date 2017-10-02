@@ -3,11 +3,6 @@ osx_image: xcode9
 before_install:
   - gem install pact-mock_service -v 2.1.0
   - bundle install
-  - brew update
-  - brew upgrade
-  - brew prune
-  - brew cleanup
-  - brew doctor
 script:
   - set -o pipefail
   - swift package resolve

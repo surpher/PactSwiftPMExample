@@ -42,15 +42,16 @@ let package = Package(
 ```
 
 #### Workflow
-1. Download the dependencies by running `swift package resolve` in your project root,
-2. Edit your source and add your tests,
-3. Build the project by running `swift build`,
-4. Test the app works by running `.build/debug/PactSwiftPMExample` - it should print a response from [https://swapi.co/api/people/1/](),
-4. Start up the pact mock service by running `pact-mock-service start --pact-specification-version 2.0.0 --log "./tmp/pact.log" --pact-dir "./tmp/pacts" -p 1234`  
+1. `mkdir myProject && cd myProject`, `swift package init --type executable`
+2. Download the dependencies by running `swift package resolve` in your project root,
+3. Edit your `Sources` and add your `Tests`,
+4. Build the project by running `swift build`,
+5. Test the app works by running `.build/debug/PactSwiftPMExample` - it should print a response from [https://swapi.co/api/people/1/](),
+6. Start up the pact mock service by running `pact-mock-service start --pact-specification-version 2.0.0 --log "./tmp/pact.log" --pact-dir "./tmp/pacts" -p 1234`  
 (or if you're lazy just `pact-mock-service start`),
-5. Run your tests by running `swift test`,
-6. Stop the mock service by running `pact-mock_service stop`
-7. When your tests pass, you can find your pact contract file in `./tmp/_my-provider_-_my-consumer_.json` file  
+7. Run your tests by running `swift test`,
+8. Stop the mock service by running `pact-mock_service stop`
+9. When your tests pass, you can find your pact contract file in `./tmp/_my-provider_-_my-consumer_.json` file  
 _(where provider and consumer is what we set it up in the tests_ `PactConsumer.MockService(provider: "_my-provider_", consumer: "_my-consumer_")`_- if you were wondering...)_
 
 ##### Notes
