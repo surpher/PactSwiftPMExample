@@ -16,10 +16,10 @@ let package = Package(
           dependencies: ["PactSwiftPMExample"],
           path: "Sources/PactConsumer"),
         .target(
-            name: "PactSwiftPMExample",
-            dependencies: ["Alamofire"]),
+          name: "PactSwiftPMExample",
+          dependencies: ["Alamofire"]),
         .testTarget(
-            name: "PactSwiftPMExampleTests",
-            dependencies: ["PactSwiftPMExample", "PactConsumerSwift"]),
+          name: "PactSwiftPMExampleTests",
+          dependencies: ["PactSwiftPMExample", "PactConsumerSwift"]),
     ]
 )
