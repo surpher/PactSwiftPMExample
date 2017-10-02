@@ -50,17 +50,14 @@ let package = Package(
 2. Download the dependencies by running `swift package resolve` in your project root,
 3. Edit your `Sources` and add your `Tests`,
 4. Build the project by running `swift build`,
-5. Test the app works by running `.build/debug/PactConsumer` - it should print a response from [https://swapi.co/api/people/1/](),
+5. Test the app works by running `.build/debug/PactConsumer` (that's the target holding `main.swift` file) - it should print a response from [https://swapi.co/api/people/1/](),
 6. Start up the pact mock service by running `pact-mock-service start --pact-specification-version 2.0.0 --log "./tmp/pact.log" --pact-dir "./tmp/pacts" -p 1234`  
 (or if you're lazy just `pact-mock-service start`),
 7. Run your tests by running `swift test`,
 8. Stop the mock service by running `pact-mock_service stop`
 9. When your tests pass, you can find your pact contract file in `./tmp/_my-provider_-_my-consumer_.json` file  
-_(where provider and consumer is what we set it up in the tests_ `PactConsumer.MockService(provider: "_my-provider_", consumer: "_my-consumer_")`_- if you were wondering...)_
+_(where provider and consumer is what we set it up in the PactTests_ `starWarsProvider = PactConsumerSwift.MockService(provider: "_my-provider_", consumer: "_my-consumer_")`_- if you were wondering...)_
 
 ##### Notes
-[surpher/PactConsumer](https://github.com/surpher/PactConsumer) is used only for version consistency. Please look into using the real deal by going to [pact-consumer-swift](https://github.com/DiUS/pact-consumer-swift) library (module name `PactConsumerSwift`).
-
-
 To avoid running 4 commands to start the mock service, build, test and shut down the mock service, there's a `build_test.sh` script in this repo that takes care of starting the _pact-mock-service_, building the project and running the test, then shutting down the service.  
 You should probably set up your own test script/s based on your own requirements.
