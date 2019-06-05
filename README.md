@@ -9,8 +9,13 @@ This project is an example of how to use [pact-consumer-swift](https://github.co
 
 ## Installation
 
-##### Install the [pact-mock_service](https://github.com/pact-foundation/pact-mock_service)
-In your terminal run: `gem install pact-mock_service`  
+##### Install the [pact-mock_service](https://github.com/pact-foundation/pact-ruby-standalone/releases)
+In your terminal run: 
+
+```
+brew tap surpher/pact-ruby-standalone
+brew update
+```
 _This pact mock service will stand in for your API provider and run on localhost._
 
 ##### Init your executable Swift project
