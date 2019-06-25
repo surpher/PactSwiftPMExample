@@ -6,7 +6,7 @@ let package = Package(
     name: "PactSwiftPMExample",
     dependencies: [
       .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.5.1"),
-      .package(url: "https://github.com/DiUS/pact-consumer-swift", from: "0.5.0")
+      .package(url: "https://github.com/DiUS/pact-consumer-swift", .branch("master"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.

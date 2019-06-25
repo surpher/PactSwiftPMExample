@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "b8995447518fd57af14c88a47f27434a16f60403",
-          "version": "4.5.1"
+          "revision": "75bba56748359f297a83f620d45f72cf4ebee4e7",
+          "version": "4.8.2"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/Thomvis/BrightFutures.git",
         "state": {
           "branch": null,
-          "revision": "f18744a3061d2302a3673aafdb6fbdbbfe9b4f6f",
-          "version": "5.2.0"
+          "revision": "9279defa6bdc21501ce740266e5a14d0119ddc63",
+          "version": "8.0.1"
         }
       },
       {
@@ -24,26 +24,17 @@
         "repositoryURL": "https://github.com/Quick/Nimble.git",
         "state": {
           "branch": null,
-          "revision": "38c9ab0846a3fbec308eb2aa9ef68b10a7434eb4",
-          "version": "7.0.2"
+          "revision": "f8657642dfdec9973efc79cc68bcef43a653a2bc",
+          "version": "8.0.2"
         }
       },
       {
         "package": "PactConsumerSwift",
         "repositoryURL": "https://github.com/DiUS/pact-consumer-swift",
         "state": {
-          "branch": null,
-          "revision": "47eca8de8f1fa54743216f5aa51e0bb33c141e43",
-          "version": "0.5.0"
-        }
-      },
-      {
-        "package": "Quick",
-        "repositoryURL": "https://github.com/Quick/Quick.git",
-        "state": {
-          "branch": null,
-          "revision": "0ff81f2c665b4381f526bd656f8708dd52a9ea2f",
-          "version": "1.2.0"
+          "branch": "master",
+          "revision": "f00421a1fd8caa1350adc7085f80ad7e2a7cf8ee",
+          "version": null
         }
       },
       {
@@ -51,8 +42,8 @@
         "repositoryURL": "https://github.com/antitypical/Result.git",
         "state": {
           "branch": null,
-          "revision": "7477584259bfce2560a19e06ad9f71db441fff11",
-          "version": "3.2.4"
+          "revision": "12920a5c2595926efab9274d6003e29f503dbb66",
+          "version": "5.0.0"
         }
       }
     ]
