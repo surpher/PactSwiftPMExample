@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode9
+osx_image: xcode10.2
 before_install:
-  - gem install pact-mock_service -v 2.1.0
-  - bundle install
+  - brew tap pact-foundation/pact-ruby-standalone
+  - brew install pact-ruby-standalone
 script:
   - set -o pipefail
   - swift package resolve
