@@ -9,19 +9,35 @@ This project is an example of how to use [pact-consumer-swift](https://github.co
 
 ## Installation
 
-##### Install the [pact-mock_service](https://github.com/pact-foundation/pact-ruby-standalone/releases)
-In your terminal run: 
+### Install the [pact-mock_service](https://github.com/pact-foundation/pact-ruby-standalone/releases)
 
-```
+In your terminal run:
+
+```bash
 brew tap surpher/pact-ruby-standalone
 brew update
 ```
+
 _This pact mock service will stand in for your API provider and run on localhost._
 
-##### Init your executable Swift project
+## Running this demo project
+
+1. Clone the repo
+2. Sort out the dependencies
+3. Navigate to the root folder
+4. run `./scripts/build_test.sh` to run Pact tests
+5. run the app `.build/debug/PactConsumer` (the executable will call `https://swapi.co/api/people/1/` print the progress and eventually the result returned from the API)
+
+## Your Project
+
+##### Init your brand new executable Swift project
+
 `swift package init --type executable`
 
 #### Prepare your dependencies in `Package.swift` manifest file
+
+This is an example from this project where Alamofire is used to make the network call:
+
 ```swift
 // swift-tools-version:4.0
 
@@ -30,8 +46,8 @@ import PackageDescription
 let package = Package(
     name: "PactSwiftPMExample",
     dependencies: [
-      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.5.1"),
-      .package(url: "https://github.com/DiUS/pact-consumer-swift", from: "0.5.0")
+      .package(url: "https://github.com/Alamofire/Alamofire.git", from: "4.8.2"),
+      .package(url: "https://github.com/DiUS/pact-consumer-swift", from: "0.6.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -49,7 +65,8 @@ let package = Package(
     ]
 )
 ```
-Do your coding thing...
+
+Write your application...
 
 
 #### Overall Workflow Example
