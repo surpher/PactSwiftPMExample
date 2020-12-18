@@ -1,0 +1,27 @@
+name: Build
+
+on: [push, workflow_dispatch, repository_dispatch]
+
+jobs:
+  test_project:
+    name: Test project
+    runs-on: macOS-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Use Xcode 12
+        run: sudo xcode-select -switch /Applications/Xcode_12.2.app
+
+      - name: Prepare tools
+        run: |
+          brew tap pact-foundation/pact-ruby-standalone
+          brew install pact-ruby-standalone swiftlint
+
+      - name: Run tests
+        run: |
+          swift package resolve
+          scripts/build_test.sh
