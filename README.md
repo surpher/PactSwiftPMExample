@@ -1,6 +1,6 @@
 # Consumer Driven Contracts Testing using Swift Package Manager
 
-[![Build Status](https://travis-ci.org/surpher/PactSwiftPMExample.svg?branch=master)](https://travis-ci.org/surpher/PactSwiftPMExample)
+[![Build](https://github.com/surpher/PactSwiftPMExample/workflows/Build/badge.svg)](https://github.com/surpher/PactSwiftPMExample/actions?query=workflow%3ABuild)
 [![Swift Package Manager Compatible](https://img.shields.io/badge/swift_package_manager-compatible-brightgreen.svg)]()
 ![Swift](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)
 [![Twitter](https://img.shields.io/badge/twitter-@pact__up-blue.svg?style=flat)](http://twitter.com/pact_up)
