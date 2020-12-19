@@ -1,9 +1,0 @@
-language: objective-c
-osx_image: xcode10.2
-before_install:
-  - brew tap pact-foundation/pact-ruby-standalone
-  - brew install pact-ruby-standalone
-script:
-  - set -o pipefail
-  - swift package resolve
-  - scripts/build_test.sh
