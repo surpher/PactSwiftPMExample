@@ -19,7 +19,7 @@ jobs:
       - name: Prepare tools
         run: |
           brew tap pact-foundation/pact-ruby-standalone
-          brew install pact-ruby-standalone swiftlint
+          brew install pact-ruby-standalone
 
       - name: Run tests
         run: |
