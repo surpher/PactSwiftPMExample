@@ -14,8 +14,8 @@ This project is an example of how to use [pact-consumer-swift](https://github.co
 In your terminal run:
 
 ```bash
-brew tap surpher/pact-ruby-standalone
-brew update
+brew tap pact-foundation/pact-ruby-standalone
+brew install pact-ruby-standalone
 ```
 
 _This pact mock service will stand in for your API provider and run on localhost._
